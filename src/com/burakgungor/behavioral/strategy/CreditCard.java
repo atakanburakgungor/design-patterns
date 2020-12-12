@@ -1,4 +1,4 @@
-package com.burakgungor.strategy;
+package com.burakgungor.behavioral.strategy;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

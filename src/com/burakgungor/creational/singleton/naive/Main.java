@@ -1,4 +1,4 @@
-package com.burakgungor.singleton.naive;
+package com.burakgungor.creational.singleton.naive;
 
 public class Main {
     public static void main(String[] args) {

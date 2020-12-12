@@ -1,4 +1,4 @@
-package com.burakgungor.singleton.naive;
+package com.burakgungor.creational.singleton.naive;
 
 import java.util.Objects;
 

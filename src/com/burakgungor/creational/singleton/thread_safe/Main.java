@@ -1,4 +1,4 @@
-package com.burakgungor.singleton.thread_safe;
+package com.burakgungor.creational.singleton.thread_safe;
 
 public class Main {
     public static void main(String[] args) {
