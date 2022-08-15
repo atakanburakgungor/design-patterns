@@ -1,22 +1,23 @@
 package com.burakgungor.behavioral.observer;
 
+import java.util.Random;
+import java.util.stream.IntStream;
+
 public class Main {
     public static void main(String[] args) {
-        MergeRequest mergeRequest = new MergeRequest();
-        mergeRequest.setTitle("design-patterns");
-        mergeRequest.setDescription("observer");
-        mergeRequest.setLabel("behavioral");
-        mergeRequest.setAssignee("burakgungor");
-        mergeRequest.setReviewer("burakgungor");
-        mergeRequest.setDeleteSourceBranch(Boolean.TRUE);
+        WeatherData weatherData = new WeatherData();
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
+        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        IntStream.range(0, 5).forEach(i -> {
+            float temp = randomFloat();
+            float humidity = randomFloat();
+            float pressure = randomFloat();
+            weatherData.measurementsChanged(temp, humidity, pressure);
+        });
+    }
 
-        Repository repository = new Repository(mergeRequest);
-        repository.setName("design-patterns");
-        repository.setVisibilityLevel("public");
-        repository.setSlug("pattern");
-
-        mergeRequest.notifySubscribers();
-
-
+    private static float randomFloat() {
+        Random random = new Random();
+        return random.nextFloat();
     }
 }
