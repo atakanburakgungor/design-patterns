@@ -8,6 +8,7 @@ public class Main {
         WeatherData weatherData = new WeatherData();
         CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
         ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        //weatherData.unsubscribe(currentConditionsDisplay);
         IntStream.range(0, 5).forEach(i -> {
             float temp = randomFloat();
             float humidity = randomFloat();
